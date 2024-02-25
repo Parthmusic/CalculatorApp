@@ -1,0 +1,50 @@
+#heading{
+  color: white;
+  text-align: center;
+  border: solid;
+  border-color: lightgray;
+  border-radius: 20px;
+}
+body{
+  background-color: black;
+}
+
+
+.button{
+  color: black;
+  background-color: lightgray;
+  padding:10px;
+  align-items: center;
+  margin:auto;
+  font-size: 20px;
+  
+}
+.buttonDummy{
+  color: #afeeee;
+  background-color: #27576d;
+  padding:10px;
+  
+}
+#result{
+  border: solid;
+  border-color: lightgray;
+  color:lightgray;
+  text-align: center;
+  font-size: 20px;
+}
+table,td{
+  font-size: 20px;
+}
+.numbers{
+  margin-left: auto;
+  margin-right: auto;
+}
+.operations{
+  margin-left:auto;
+  margin-right: auto;
+}
+.ac{
+  font-size: 20px;
+  margin-left:auto;
+  margin-right: auto;
+}

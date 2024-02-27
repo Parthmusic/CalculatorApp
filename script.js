@@ -15,6 +15,7 @@ const buttonDiv = document.querySelector("#buttond");
 const buttonEq = document.querySelector("#buttone");
 const buttonDel = document.querySelector("#buttondel");
 const buttonAc = document.querySelector("#buttonac");
+const buttonPoint = document.querySelector("#buttonpoint");
 let num = [];
 let i=0;
 let k=0;
@@ -25,12 +26,14 @@ let a=0;
 let b=0;
 let n;
 let ans;
-
+let decimalPoint;
+let finalAns;
 //num[] = {};
 let index = 0;
 //num[index]={};
 let j=0;
 let operation=0;
+let position;
 //num[i][index] = {};
 button0.onclick = addZero;
 button1.onclick = addOne;
@@ -49,10 +52,14 @@ buttonDiv.onclick = divide;
 buttonEq.onclick = equal;
 buttonDel.onclick = del;
 buttonAc.onclick = ac;
+buttonPoint.onclick = point;
 
 function addZero()
 {
-  result.innerText += 0;
+  if(i==0 && index==0)
+    result.innerText = 0;
+  else
+    result.innerText += 0;
   num[i]=[];
   num[i][index]=0;
   console.log(num[i][index]);
@@ -62,7 +69,10 @@ function addZero()
 }
 function addOne()
 {
-  result.innerText += 1;
+  if(i==0 && index==0)
+    result.innerText = 1;
+  else
+    result.innerText += 1;
   num[i]=[];
   num[i][index]=1;
   console.log(num[i][index]);
@@ -70,7 +80,10 @@ function addOne()
 }
 function addTwo()
 {
-  result.innerText += 2;
+  if(i==0 && index==0)
+    result.innerText = 2;
+  else
+    result.innerText += 2;
   num[i]=[];
   num[i][index]=2;
   console.log(num[i][index]);
@@ -78,7 +91,10 @@ function addTwo()
 }
 function addThree()
 {
-  result.innerText += 3;
+  if(i==0 && index==0)
+    result.innerText = 3;
+  else
+    result.innerText += 3;
   num[i]=[];
   num[i][index]=3;
   console.log(num[i][index]);
@@ -86,7 +102,10 @@ function addThree()
 }
 function addFour()
 {
-  result.innerText += 4;
+  if(i==0 && index==0)
+    result.innerText = 4;
+  else
+    result.innerText += 4;
   num[i]=[];
   num[i][index]=4;
   console.log(num[i][index]);
@@ -94,7 +113,10 @@ function addFour()
 }
 function addFive()
 {
-  result.innerText += 5;
+  if(i==0 && index==0)
+    result.innerText = 5;
+  else
+    result.innerText += 5;
   num[i]=[];
   num[i][index]=5;
   console.log(num[i][index]);
@@ -102,7 +124,10 @@ function addFive()
 }
 function addSix()
 {
-  result.innerText += 6;
+  if(i==0 && index==0)
+    result.innerText = 6;
+  else
+    result.innerText += 6;
   num[i]=[];
   num[i][index]=6;
   console.log(num[i][index]);
@@ -110,7 +135,10 @@ function addSix()
 }
 function addSeven()
 {
-  result.innerText += 7;
+  if(i==0 && index==0)
+    result.innerText = 7;
+  else
+    result.innerText += 7;
   num[i]=[];
   num[i][index]=7;
   console.log(num[i][index]);
@@ -118,7 +146,10 @@ function addSeven()
 }
 function addEight()
 {
-  result.innerText += 8;
+  if(i==0 && index==0)
+    result.innerText = 8;
+  else
+    result.innerText += 8;
   num[i]=[];
   num[i][index]=8;
   console.log(num[i][index]);
@@ -126,7 +157,10 @@ function addEight()
 }
 function addNine()
 {
-  result.innerText += 9;
+  if(i==0 && index==0)
+    result.innerText = 9;
+  else
+    result.innerText += 9;
   num[i]=[];
   num[i][index]=9;
   console.log(num[i][index]);
@@ -137,7 +171,13 @@ function add()
   result.innerText += "+";
   operation = 1;
   l1=i;
-  n=l1-1;
+  if(decimalPoint==1)
+  {
+    n=position-1;
+  }
+  else{
+    n=l1-1;
+  }
   for(k=0;k<l1;k++)
     {
       
@@ -153,7 +193,13 @@ function subtract()
   result.innerText += "-";
   operation = 2;
   l1=i;
-  n=l1-1;
+  if(decimalPoint==1)
+  {
+    n=position-1;
+  }
+  else{
+    n=l1-1;
+  }
   for(k=0;k<l1;k++)
     {
 
@@ -166,10 +212,16 @@ function subtract()
 }
 function multiply()
 {
-  result.innerText += "*";
+  result.innerText += "\u00D7";
   operation = 3;
   l1=i;
-  n=l1-1;
+  if(decimalPoint==1)
+  {
+    n=position-1;
+  }
+  else{
+    n=l1-1;
+  }
   for(k=0;k<l1;k++)
     {
 
@@ -182,10 +234,18 @@ function multiply()
 }
 function divide()
 {
-  result.innerText += "/";
+  result.innerText += "\u00F7";
   operation = 4;
   l1=i;
-  n=l1-1;
+  if(decimalPoint==1)
+  {
+    n=position-1;
+  }
+  else{
+    n=l1-1;
+  }
+  
+  
   for(k=0;k<l1;k++)
     {
 
@@ -195,18 +255,31 @@ function divide()
   console.log(a);
   index=1;
   i=0;
+  position=0;
+  decimalPoint=0;
+  
 }
 
 function del()
 {
   result.innerText =result.innerText.slice(0,-1);
+  if(i>0)
+    i--;
+  
+  
 }
 
 function equal()
 {
   l2=i;
   //console.log(l1,l2);
-  n=l2-1;
+  if(decimalPoint==1)
+  {
+    n=position-1;
+  }
+  else{
+    n=l2-1;
+  }
   for(k=0;k<l2;k++)
     {
 
@@ -217,37 +290,56 @@ function equal()
   if(operation==1)
   {
     ans = a+b;
-    result.innerText = ans;
+    
   }
   if(operation==2)
   {
     ans = a-b;
-    result.innerText = ans;
+    
   }
   if(operation==3)
   {
     ans = a*b;
-    result.innerText = ans;
+    
   }
   if(operation==4)
   {
     ans = a/b;
-    result.innerText = ans;
+   
   }
+  finalAns = ans.toFixed(5);
+  finalAns = parseFloat(finalAns);
+  result.innerText = finalAns;
   operation=0;
   i=0;
   index=1;
   a=ans;
   b=0;
+  position=0;
+  decimalPoint=0;
   
 }
 
 function ac()
 {
-  result.innerText = "";
+  result.innerText = "0";
   operation=0;
   i=0;
   index=0;
   a=0;
   b=0;
+  position=0;
+  decimalPoint=0;
 }
+
+function point()
+{
+  result.innerText+=".";
+  position = i;
+  decimalPoint = 1;
+  console.log(position,decimalPoint);
+}
+
+
+
+//two features : dynamic colouring and copy to clipboard

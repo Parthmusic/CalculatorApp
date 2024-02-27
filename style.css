@@ -6,7 +6,7 @@
   border-radius: 20px;
 }
 body{
-  background-color: black;
+  background-color: #27576d;
 }
 
 
@@ -17,6 +17,9 @@ body{
   align-items: center;
   margin:auto;
   font-size: 20px;
+  width: 40px;
+  height: 50px;
+  text-align: center;
   
 }
 .buttonDummy{
@@ -28,9 +31,11 @@ body{
 #result{
   border: solid;
   border-color: lightgray;
-  color:lightgray;
+  color:white;
   text-align: center;
   font-size: 20px;
+  width:160px;
+  margin: auto;
 }
 table,td{
   font-size: 20px;
@@ -47,4 +52,8 @@ table,td{
   font-size: 20px;
   margin-left:auto;
   margin-right: auto;
+}
+#buttonac{
+  height: 50px;
+  width: 50px;
 }

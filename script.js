@@ -16,6 +16,7 @@ const buttonEq = document.querySelector("#buttone");
 const buttonDel = document.querySelector("#buttondel");
 const buttonAc = document.querySelector("#buttonac");
 const buttonPoint = document.querySelector("#buttonpoint");
+const buttonCopy = document.querySelector("#buttoncopy");
 let num = [];
 let i=0;
 let k=0;
@@ -27,14 +28,12 @@ let b=0;
 let n;
 let ans;
 let decimalPoint;
-let finalAns;
-//num[] = {};
+let finalAns=0;
 let index = 0;
-//num[index]={};
 let j=0;
 let operation=0;
 let position;
-//num[i][index] = {};
+let copyAns;
 button0.onclick = addZero;
 button1.onclick = addOne;
 button2.onclick = addTwo;
@@ -53,11 +52,15 @@ buttonEq.onclick = equal;
 buttonDel.onclick = del;
 buttonAc.onclick = ac;
 buttonPoint.onclick = point;
+buttonCopy.onclick = copy;
 
 function addZero()
 {
-  if(i==0 && index==0)
-    result.innerText = 0;
+    if(i==0 && index==0)
+    {
+      result.innerText = 0;
+      a=0;
+    }
   else
     result.innerText += 0;
   num[i]=[];
@@ -69,8 +72,11 @@ function addZero()
 }
 function addOne()
 {
-  if(i==0 && index==0)
-    result.innerText = 1;
+    if(i==0 && index==0)
+    {
+      result.innerText = 1;
+      a=0;
+    }
   else
     result.innerText += 1;
   num[i]=[];
@@ -80,8 +86,11 @@ function addOne()
 }
 function addTwo()
 {
-  if(i==0 && index==0)
-    result.innerText = 2;
+    if(i==0 && index==0)
+    {
+      result.innerText = 2;
+      a=0;
+    }
   else
     result.innerText += 2;
   num[i]=[];
@@ -91,8 +100,11 @@ function addTwo()
 }
 function addThree()
 {
-  if(i==0 && index==0)
-    result.innerText = 3;
+    if(i==0 && index==0)
+    {
+      result.innerText = 3;
+      a=0;
+    }
   else
     result.innerText += 3;
   num[i]=[];
@@ -102,8 +114,11 @@ function addThree()
 }
 function addFour()
 {
-  if(i==0 && index==0)
-    result.innerText = 4;
+    if(i==0 && index==0)
+    {
+      result.innerText = 4;
+      a=0;
+    }
   else
     result.innerText += 4;
   num[i]=[];
@@ -113,8 +128,11 @@ function addFour()
 }
 function addFive()
 {
-  if(i==0 && index==0)
-    result.innerText = 5;
+    if(i==0 && index==0)
+    {
+      result.innerText = 5;
+      a=0;
+    }
   else
     result.innerText += 5;
   num[i]=[];
@@ -125,7 +143,11 @@ function addFive()
 function addSix()
 {
   if(i==0 && index==0)
+  {
     result.innerText = 6;
+    a=0;
+  }
+    
   else
     result.innerText += 6;
   num[i]=[];
@@ -135,8 +157,11 @@ function addSix()
 }
 function addSeven()
 {
-  if(i==0 && index==0)
-    result.innerText = 7;
+    if(i==0 && index==0)
+    {
+      result.innerText = 7;
+      a=0;
+    }
   else
     result.innerText += 7;
   num[i]=[];
@@ -146,8 +171,11 @@ function addSeven()
 }
 function addEight()
 {
-  if(i==0 && index==0)
-    result.innerText = 8;
+    if(i==0 && index==0)
+    {
+      result.innerText = 8;
+      a=0;
+    }
   else
     result.innerText += 8;
   num[i]=[];
@@ -157,8 +185,11 @@ function addEight()
 }
 function addNine()
 {
-  if(i==0 && index==0)
-    result.innerText = 9;
+    if(i==0 && index==0)
+    {
+      result.innerText = 9;
+      a=0;
+    }
   else
     result.innerText += 9;
   num[i]=[];
@@ -262,6 +293,7 @@ function divide()
 
 function del()
 {
+  if(result.innerText!=0)
   result.innerText =result.innerText.slice(0,-1);
   if(i>0)
     i--;
@@ -286,7 +318,7 @@ function equal()
       b+=(Math.pow(10,n)*num[k][1]);
       n--;
     }
-  console.log(b);
+  //console.log(b);
   if(operation==1)
   {
     ans = a+b;
@@ -311,8 +343,12 @@ function equal()
   finalAns = parseFloat(finalAns);
   result.innerText = finalAns;
   operation=0;
+  
   i=0;
-  index=1;
+  
+  
+  //index=1;
+  index=0;
   a=ans;
   b=0;
   position=0;
@@ -334,12 +370,25 @@ function ac()
 
 function point()
 {
-  result.innerText+=".";
+  
+  if(i==0 && index==0)
+    {
+      result.innerText = "0.";
+      a=0;
+      num[i]=[];
+      num[i][index]=0;
+      console.log(num[i][index]);
+      i++;
+    }
+  else
+    result.innerText += "."
   position = i;
   decimalPoint = 1;
   console.log(position,decimalPoint);
 }
 
+function copy()
+{
+  navigator.clipboard.writeText(finalAns);
+}
 
-
-//two features : dynamic colouring and copy to clipboard

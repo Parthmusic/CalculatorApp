@@ -18,32 +18,32 @@ const buttonAc = document.querySelector("#buttonac");
 const buttonPoint = document.querySelector("#buttonpoint");
 const buttonCopy = document.querySelector("#buttoncopy");
 let num = [];
-let i=0;
-let k=0;
-let l=0;
+let i = 0;
+let k = 0;
+let l = 0;
 let l1;
 let l2;
-let a=0;
-let b=0;
+let a = 0;
+let b = 0;
 let n;
 let ans;
 let decimalPoint;
-let finalAns=0;
+let finalAns = 0;
 let index = 0;
-let j=0;
-let operation=0;
+let j = 0;
+let operation = 0;
 let position;
 let copyAns;
-button0.onclick = addZero;
-button1.onclick = addOne;
-button2.onclick = addTwo;
-button3.onclick = addThree;
-button4.onclick = addFour;
-button5.onclick = addFive;
-button6.onclick = addSix;
-button7.onclick = addSeven;
-button8.onclick = addEight;
-button9.onclick = addNine;
+button0.onclick = clickZero;
+button1.onclick = clickOne;
+button2.onclick = clickTwo;
+button3.onclick = clickThree;
+button4.onclick = clickFour;
+button5.onclick = clickFive;
+button6.onclick = clickSix;
+button7.onclick = clickSeven;
+button8.onclick = clickEight;
+button9.onclick = clickNine;
 buttonAdd.onclick = add;
 buttonSub.onclick = subtract;
 buttonMul.onclick = multiply;
@@ -54,341 +54,294 @@ buttonAc.onclick = ac;
 buttonPoint.onclick = point;
 buttonCopy.onclick = copy;
 
-function addZero()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 0;
-      a=0;
-    }
+function clickZero() {
+  if (i == 0 && index == 0) {
+    result.innerText = 0;
+    a = 0;
+  }
   else
     result.innerText += 0;
-  num[i]=[];
-  num[i][index]=0;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 0;
   i++;
- // console.log(i);
-  
 }
-function addOne()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 1;
-      a=0;
-    }
+function clickOne() {
+  if (i == 0 && index == 0) {
+    result.innerText = 1;
+    a = 0;
+  }
   else
     result.innerText += 1;
-  num[i]=[];
-  num[i][index]=1;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 1;
+  
   i++;
 }
-function addTwo()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 2;
-      a=0;
-    }
+function clickTwo() {
+  if (i == 0 && index == 0) {
+    result.innerText = 2;
+    a = 0;
+  }
   else
     result.innerText += 2;
-  num[i]=[];
-  num[i][index]=2;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 2;
+  
   i++;
 }
-function addThree()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 3;
-      a=0;
-    }
+function clickThree() {
+  if (i == 0 && index == 0) {
+    result.innerText = 3;
+    a = 0;
+  }
   else
     result.innerText += 3;
-  num[i]=[];
-  num[i][index]=3;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 3;
+  
   i++;
 }
-function addFour()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 4;
-      a=0;
-    }
+function clickFour() {
+  if (i == 0 && index == 0) {
+    result.innerText = 4;
+    a = 0;
+  }
   else
     result.innerText += 4;
-  num[i]=[];
-  num[i][index]=4;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 4;
+  
   i++;
 }
-function addFive()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 5;
-      a=0;
-    }
+function clickFive() {
+  if (i == 0 && index == 0) {
+    result.innerText = 5;
+    a = 0;
+  }
   else
     result.innerText += 5;
-  num[i]=[];
-  num[i][index]=5;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 5;
+  
   i++;
 }
-function addSix()
-{
-  if(i==0 && index==0)
-  {
+function clickSix() {
+  if (i == 0 && index == 0) {
     result.innerText = 6;
-    a=0;
+    a = 0;
   }
-    
+
   else
     result.innerText += 6;
-  num[i]=[];
-  num[i][index]=6;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 6;
+  
   i++;
 }
-function addSeven()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 7;
-      a=0;
-    }
+function clickSeven() {
+  if (i == 0 && index == 0) {
+    result.innerText = 7;
+    a = 0;
+  }
   else
     result.innerText += 7;
-  num[i]=[];
-  num[i][index]=7;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 7;
+  
   i++;
 }
-function addEight()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 8;
-      a=0;
-    }
+function clickEight() {
+  if (i == 0 && index == 0) {
+    result.innerText = 8;
+    a = 0;
+  }
   else
     result.innerText += 8;
-  num[i]=[];
-  num[i][index]=8;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 8;
+  
   i++;
 }
-function addNine()
-{
-    if(i==0 && index==0)
-    {
-      result.innerText = 9;
-      a=0;
-    }
+function clickNine() {
+  if (i == 0 && index == 0) {
+    result.innerText = 9;
+    a = 0;
+  }
   else
     result.innerText += 9;
-  num[i]=[];
-  num[i][index]=9;
-  console.log(num[i][index]);
+  num[i] = [];
+  num[i][index] = 9;
+  
   i++;
 }
-function add()
-{
+function add() {
   result.innerText += "+";
   operation = 1;
-  l1=i;
-  if(decimalPoint==1)
-  {
-    n=position-1;
+  l1 = i;
+  if (decimalPoint == 1) {
+    n = position - 1;
   }
-  else{
-    n=l1-1;
+  else {
+    n = l1 - 1;
   }
-  for(k=0;k<l1;k++)
-    {
-      
-      a+=(Math.pow(10,n)*num[k][0]);
-      n--;
-    }
-  console.log(a);
-  index=1;
-  i=0;
+  for (k = 0; k < l1; k++) {
+
+    a += (Math.pow(10, n) * num[k][0]);
+    n--;
+  }
+  
+  index = 1;
+  i = 0;
 }
-function subtract()
-{
+function subtract() {
   result.innerText += "-";
   operation = 2;
-  l1=i;
-  if(decimalPoint==1)
-  {
-    n=position-1;
+  l1 = i;
+  if (decimalPoint == 1) {
+    n = position - 1;
   }
-  else{
-    n=l1-1;
+  else {
+    n = l1 - 1;
   }
-  for(k=0;k<l1;k++)
-    {
+  for (k = 0; k < l1; k++) {
 
-      a+=(Math.pow(10,n)*num[k][0]);
-      n--;
-    }
-  console.log(a);
-  index=1;
-  i=0;
+    a += (Math.pow(10, n) * num[k][0]);
+    n--;
+  }
+  
+  index = 1;
+  i = 0;
 }
-function multiply()
-{
+function multiply() {
   result.innerText += "\u00D7";
   operation = 3;
-  l1=i;
-  if(decimalPoint==1)
-  {
-    n=position-1;
+  l1 = i;
+  if (decimalPoint == 1) {
+    n = position - 1;
   }
-  else{
-    n=l1-1;
+  else {
+    n = l1 - 1;
   }
-  for(k=0;k<l1;k++)
-    {
+  for (k = 0; k < l1; k++) {
 
-      a+=(Math.pow(10,n)*num[k][0]);
-      n--;
-    }
-  console.log(a);
-  index=1;
-  i=0;
+    a += (Math.pow(10, n) * num[k][0]);
+    n--;
+  }
+  
+  index = 1;
+  i = 0;
 }
-function divide()
-{
+function divide() {
   result.innerText += "\u00F7";
   operation = 4;
-  l1=i;
-  if(decimalPoint==1)
-  {
-    n=position-1;
+  l1 = i;
+  if (decimalPoint == 1) {
+    n = position - 1;
   }
-  else{
-    n=l1-1;
+  else {
+    n = l1 - 1;
   }
-  
-  
-  for(k=0;k<l1;k++)
-    {
 
-      a+=(Math.pow(10,n)*num[k][0]);
-      n--;
-    }
-  console.log(a);
-  index=1;
-  i=0;
-  position=0;
-  decimalPoint=0;
+
+  for (k = 0; k < l1; k++) {
+
+    a += (Math.pow(10, n) * num[k][0]);
+    n--;
+  }
   
+  index = 1;
+  i = 0;
+  position = 0;
+  decimalPoint = 0;
+
 }
 
-function del()
-{
-  if(result.innerText!=0)
-  result.innerText =result.innerText.slice(0,-1);
-  if(i>0)
+function del() {
+  if (result.innerText != 0)
+    result.innerText = result.innerText.slice(0, -1);
+  if (i > 0)
     i--;
-  
-  
+
+
 }
 
-function equal()
-{
-  l2=i;
+function equal() {
+  l2 = i;
   //console.log(l1,l2);
-  if(decimalPoint==1)
-  {
-    n=position-1;
+  if (decimalPoint == 1) {
+    n = position - 1;
   }
-  else{
-    n=l2-1;
+  else {
+    n = l2 - 1;
   }
-  for(k=0;k<l2;k++)
-    {
+  for (k = 0; k < l2; k++) {
 
-      b+=(Math.pow(10,n)*num[k][1]);
-      n--;
-    }
+    b += (Math.pow(10, n) * num[k][1]);
+    n--;
+  }
   //console.log(b);
-  if(operation==1)
-  {
-    ans = a+b;
-    
+  if (operation == 1) {
+    ans = a + b;
+
   }
-  if(operation==2)
-  {
-    ans = a-b;
-    
+  if (operation == 2) {
+    ans = a - b;
+
   }
-  if(operation==3)
-  {
-    ans = a*b;
-    
+  if (operation == 3) {
+    ans = a * b;
+
   }
-  if(operation==4)
-  {
-    ans = a/b;
-   
+  if (operation == 4) {
+    ans = a / b;
+
   }
   finalAns = ans.toFixed(5);
   finalAns = parseFloat(finalAns);
   result.innerText = finalAns;
-  operation=0;
-  
-  i=0;
-  
-  
+  operation = 0;
+
+  i = 0;
+
+
   //index=1;
-  index=0;
-  a=ans;
-  b=0;
-  position=0;
-  decimalPoint=0;
-  
+  index = 0;
+  a = ans;
+  b = 0;
+  position = 0;
+  decimalPoint = 0;
+
 }
 
-function ac()
-{
+function ac() {
   result.innerText = "0";
-  operation=0;
-  i=0;
-  index=0;
-  a=0;
-  b=0;
-  position=0;
-  decimalPoint=0;
+  operation = 0;
+  i = 0;
+  index = 0;
+  a = 0;
+  b = 0;
+  position = 0;
+  decimalPoint = 0;
 }
 
-function point()
-{
-  
-  if(i==0 && index==0)
-    {
-      result.innerText = "0.";
-      a=0;
-      num[i]=[];
-      num[i][index]=0;
-      console.log(num[i][index]);
-      i++;
-    }
+function point() {
+
+  if (i == 0 && index == 0) {
+    result.innerText = "0.";
+    a = 0;
+    num[i] = [];
+    num[i][index] = 0;
+    
+    i++;
+  }
   else
     result.innerText += "."
   position = i;
   decimalPoint = 1;
-  console.log(position,decimalPoint);
+  console.log(position, decimalPoint);
 }
 
-function copy()
-{
+function copy() {
   navigator.clipboard.writeText(finalAns);
 }
 
